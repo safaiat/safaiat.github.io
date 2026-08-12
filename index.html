@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Academic website of Md Safaiat Hossain, Ph.D. student in Data Science & Engineering at the University of Tennessee, Knoxville.">
+  <title>Md Safaiat Hossain</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-current-page="home">
+
+<header class="site-header">
+  <div class="site-shell nav">
+    <a class="brand" href="index.html">Md Safaiat Hossain</a>
+    <button class="menu-button" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="cv.html" data-page="cv">CV</a>
+      <a href="research.html" data-page="research">Research</a>
+      <a href="publications.html" data-page="publications">Publications</a>
+      <a href="contact.html" data-page="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <div class="site-shell hero">
+    <div>
+      <p class="eyebrow">Academic Portfolio</p>
+      <h1>Md Safaiat Hossain</h1>
+      <p class="hero-role">
+        Ph.D. Student in Data Science & Engineering<br>
+        University of Tennessee, Knoxville
+      </p>
+      <p class="hero-intro">
+        I am a doctoral researcher working at the intersection of computational imaging,
+        tomographic reconstruction, scientific computing, and machine learning.
+      </p>
+    </div>
+
+    <div class="portrait" aria-label="Profile photo">
+      <!-- Replace the placeholder below with:
+      <img src="assets/profile.jpg" alt="Md Safaiat Hossain">
+      -->
+      <span class="portrait-placeholder">SH</span>
+    </div>
+  </div>
+</main>
+
+
+<footer class="site-footer">
+  <div class="site-shell footer-inner">
+    <span>© 2026 Md Safaiat Hossain</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    if (link.dataset.page === document.body.dataset.currentPage) link.classList.add("active");
+  });
+</script>
+</body>
+</html>

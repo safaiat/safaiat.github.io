@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research interests of Md Safaiat Hossain in CT and SPECT reconstruction.">
+  <title>Research | Md Safaiat Hossain</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-current-page="research">
+
+<header class="site-header">
+  <div class="site-shell nav">
+    <a class="brand" href="index.html">Md Safaiat Hossain</a>
+    <button class="menu-button" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="cv.html" data-page="cv">CV</a>
+      <a href="research.html" data-page="research">Research</a>
+      <a href="publications.html" data-page="publications">Publications</a>
+      <a href="contact.html" data-page="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <section class="page-header">
+    <div class="site-shell">
+      <p class="eyebrow">Research</p>
+      <h1>Research</h1>
+      <p>
+        My research centers on computational methods for tomographic image reconstruction,
+        with current interests in X-ray computed tomography and single-photon emission computed tomography.
+      </p>
+    </div>
+  </section>
+
+  <div class="site-shell content">
+    <section class="section">
+      <span class="research-label">Computed Tomography</span>
+      <h2>CT Reconstruction</h2>
+      <p>
+        I am interested in model-based and learning-assisted approaches for reconstructing
+        high-quality CT images from measured projection data. My work broadly explores
+        inverse problems, statistical reconstruction, image priors, and computational methods
+        for improving reconstruction quality and efficiency.
+      </p>
+    </section>
+
+    <section class="section">
+      <span class="research-label">Nuclear Medicine Imaging</span>
+      <h2>SPECT Reconstruction</h2>
+      <p>
+        I am also interested in quantitative SPECT reconstruction, including physics-aware
+        forward models and statistical reconstruction methods for photon-counting measurements.
+        The broader goal is to develop reliable computational imaging methods that account for
+        the measurement process while producing accurate reconstructed activity distributions.
+      </p>
+    </section>
+
+    <section class="section">
+      <span class="research-label">Broader Interests</span>
+      <h2>Computational Imaging & Scientific Machine Learning</h2>
+      <p>
+        More broadly, I am interested in computational imaging, inverse problems, optimization,
+        uncertainty-aware reconstruction, and machine-learning methods that can complement
+        physics-based imaging models.
+      </p>
+    </section>
+  </div>
+</main>
+
+
+<footer class="site-footer">
+  <div class="site-shell footer-inner">
+    <span>© 2026 Md Safaiat Hossain</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    if (link.dataset.page === document.body.dataset.currentPage) link.classList.add("active");
+  });
+</script>
+</body>
+</html>
