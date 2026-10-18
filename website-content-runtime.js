@@ -27,4 +27,5 @@
  function load(path,parse,apply){return fetch(path,{cache:'no-store'}).then(response=>{if(!response.ok)throw Error('HTTP '+response.status);return response.text()}).then(parse).then(apply).catch(error=>console.warn('Keeping embedded content for '+path+': '+error.message))}
  load('data/images.csv',PortfolioData.images,applyImages);
  if(document.querySelector('#publication-list'))load('data/publications.csv',PortfolioData.publications,renderRecords);
+ if(document.querySelector('#home-publications'))load('data/publications.csv',PortfolioData.publications,records=>{document.querySelector('#home-publications').innerHTML=records.slice(0,3).map(PortfolioData.homePublicationHTML).join('')});
 })();

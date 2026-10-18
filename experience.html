@@ -114,6 +114,46 @@ nav.page-navigation{display:block;position:static;border:0;border-top:1px solid 
 #about .prose p a,.about-background p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 @media(max-width:760px){.about-background{gap:30px}.about-background p{font-size:14px}#publication-list .publication h3{font-size:19px}}
 @media(max-width:650px){.about-background{grid-template-columns:minmax(0,1fr);gap:30px;margin-top:32px;padding-top:26px}.about-background h2{font-size:21px}#publication-list .publication{padding:25px 0}.publication-heading{gap:14px}}
+/* Homepage: compact introduction, concrete research themes, and current scholarship. */
+.home-layout .home-hero{padding:38px 0 30px;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:start}
+.home-layout .home-hero h1{font-size:62px;line-height:1.04;letter-spacing:-3px;margin:17px 0 19px}
+.home-layout .home-hero .headline{font-size:23px;line-height:1.4;letter-spacing:-.5px;max-width:500px}
+.home-layout .home-hero .intro{font-size:14px;line-height:1.8;margin-top:15px;max-width:510px}
+.home-layout .link-row{margin-top:20px;gap:24px}
+.home-layout .socials{margin-top:19px;gap:20px}
+.home-layout .home-photo{align-self:start;display:block;margin:0;padding-top:4px}
+.home-layout .home-photo img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:7px}
+.home-layout .home-photo figcaption{margin-top:10px;font-size:10px;flex-direction:row}
+.home-photo-note{border-top:1px solid var(--line);padding-top:16px;margin-top:18px}
+.home-photo-note>span{display:block;font-size:10px;color:var(--muted);margin-bottom:5px}
+.home-photo-note strong{font-size:14px;font-weight:500;line-height:1.5}
+.home-photo-note p{font-size:11px;line-height:1.65;color:var(--muted);margin-top:4px}
+.home-layout .home-affiliations{padding:17px 0;justify-content:space-between;gap:14px 24px;font-size:11px}
+.home-research,.home-scholarship{padding:34px 0}
+.home-section-heading{display:flex;justify-content:space-between;gap:24px;align-items:baseline;margin-bottom:22px}
+.home-section-heading h2{font-size:29px;line-height:1.3;letter-spacing:-.8px}
+.home-section-heading .text-link{font-size:12px;flex-shrink:0}
+.home-research-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.home-research-item{display:flex;flex-direction:column;position:relative;background:var(--wash);border-radius:7px;padding:22px 20px;min-width:0}
+.home-research-item:hover{color:var(--ink);background:#eff1f4}
+.home-item-number{font-size:10px;color:var(--muted);margin-bottom:14px}
+.home-research-item h3{font-size:18px;line-height:1.4;letter-spacing:-.3px}
+.home-research-item p{font-size:12px;line-height:1.8;color:var(--muted);margin-top:10px;padding-right:5px}
+.home-item-arrow{font-size:16px;line-height:1;color:var(--accent);margin-top:16px;align-self:flex-end}
+.home-scholarship{border-top:1px solid var(--line)}
+.home-publication{display:grid;grid-template-columns:145px minmax(0,1fr) 24px;gap:26px;padding:20px 0;border-top:1px solid var(--line);align-items:start}
+.home-pub-year{font-size:13px;font-weight:600;line-height:1.6}
+.home-pub-year span{display:block;font-size:10px;color:var(--muted);font-weight:400;line-height:1.6;margin-top:4px}
+.home-publication h3{font-size:18px;line-height:1.5;letter-spacing:-.3px}
+.home-publication p{font-size:11px;line-height:1.7;color:var(--muted);margin-top:7px}
+.home-pub-link{font-size:18px;line-height:1.5;color:var(--accent);text-align:right}
+.home-background{padding:28px 0 40px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:60px}
+.home-background h2{font-size:25px;line-height:1.4;letter-spacing:-.5px}
+.home-background p{font-size:14px;line-height:1.8;color:var(--muted)}
+.home-background .text-link{font-size:12px;margin-top:15px}
+@media(max-width:1000px){.home-layout .home-hero{gap:32px}.home-layout .home-hero h1{font-size:56px}.home-layout .home-hero .headline{font-size:21px}.home-research-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-research-item{padding:20px}.home-research-item p{max-width:330px}}
+@media(max-width:650px){.home-layout .home-hero{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:30px}.home-layout .home-hero h1{font-size:56px}.home-layout .home-hero .intro{font-size:14px}.home-layout .home-photo{width:100%;max-width:500px}.home-layout .home-affiliations{display:flex;flex-direction:column;align-items:start;gap:9px}.home-section-heading h2{font-size:25px}.home-section-heading{align-items:start;gap:15px}.home-section-heading .text-link{font-size:11px;margin-top:5px}.home-research,.home-scholarship{padding:28px 0}.home-research-grid{gap:12px}.home-research-item{padding:18px 15px}.home-research-item h3{font-size:16px}.home-research-item p{font-size:11px}.home-publication{grid-template-columns:minmax(0,1fr) 24px;gap:8px 12px;padding:19px 0}.home-pub-year{grid-column:1;display:flex;flex-wrap:wrap;gap:8px 14px;font-size:11px}.home-pub-year span{margin-top:0;font-size:10px}.home-publication>div:nth-child(2){grid-column:1}.home-pub-link{grid-column:2;grid-row:2}.home-publication h3{font-size:17px}.home-background{grid-template-columns:minmax(0,1fr);gap:15px;padding-bottom:32px}.home-background h2{font-size:23px}}
+@media(max-width:375px){.home-section-heading{display:block}.home-section-heading .text-link{margin-top:8px}}
 </style></head><body id="top"><a class="skip" href="#main">Skip to content</a><header><div class="wrap nav-row"><a class="brand" href="index.html">Md Safaiat Hossain</a><nav id="navigation" aria-label="Main navigation"><a href="index.html" >Home</a><a href="about.html" >About</a><a href="research.html" >Research</a><a href="publications.html" >Publications</a><a href="experience.html" aria-current="page">Experience</a><a href="contact.html" >Contact</a></nav><button class="menu-button" id="menu" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation">☰</button></div></header><main id="main"><div class="wrap page-intro"><h1>Experience & education</h1><p>An academic path from electrical engineering to computational imaging.</p></div><section id="experience" class="wrap"><div class="experience-grid"><div><h2 class="column-title">RESEARCH & PROFESSIONAL EXPERIENCE</h2><div class="timeline"><article class="timeline-entry"><div class="date">AUG 2024 — PRESENT</div><h3>Graduate Research Assistant</h3><h4>University of Tennessee, Knoxville</h4><p>Tomographic reconstruction, optimization, AI, and GPU-accelerated scientific computing, in collaboration with researchers at Oak Ridge National Laboratory.</p></article></div></div><div><h2 class="column-title">EDUCATION</h2><div class="timeline"><article class="timeline-entry"><div class="date">2024 — PRESENT</div><h3>Ph.D. in Data Science and Engineering</h3><h4>University of Tennessee, Knoxville</h4><p>Bredesen Center for Interdisciplinary Research and Graduate Education. Computational imaging, AI-assisted reconstruction, and high-performance computing.<br>Advisor: Dr. Xiao Wang.</p></article><article class="timeline-entry"><div class="date">UNDERGRADUATE EDUCATION</div><h3>B.Sc. in Electrical and Electronic Engineering</h3><h4>Bangladesh Army University of Engineering and Technology</h4><p>Bangladesh.</p></article></div></div></div></section></main><nav class="page-navigation" aria-label="Page navigation"><div class="wrap"><a class="page-previous" href="publications.html" rel="prev"><span>Previous</span><strong>← Publications</strong></a><a class="page-following" href="contact.html" rel="next"><span>Next</span><strong>Contact →</strong></a></div></nav><footer><div class="wrap footer-row"><span>© <span id="year">2026</span> Md Safaiat Hossain</span><span>Computational imaging · Inverse problems · Scalable AI</span><a href="contact.html">Knoxville, Tennessee</a></div></footer><a href="#top" class="back-top" aria-label="Back to top" hidden>↑</a><script>/* CSV content utilities shared by the build and the embedded browser code. */
 (function(root){
  'use strict';
@@ -155,7 +195,8 @@ nav.page-navigation{display:block;position:static;border:0;border-top:1px solid 
   const esc=escapeHTML;
   return `<article class="publication" id="pub-${esc(p.id)}"><div class="publication-heading"><span class="pub-year">${p.year}</span><span class="pub-type">${esc(p.type)}</span></div><h3><a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">${esc(p.title)}</a></h3><p class="authors">${esc(p.authors).replace(/Md\.? Safaiat Hossain/g,'<strong>$&</strong>')}</p><p class="venue">${esc(p.venue)}</p>${p.description?`<p class="pub-description">${esc(p.description)}</p>`:''}${p.image?`<img class="publication-image" src="${esc(p.image)}" alt="${esc(p.image_alt||p.title)}" loading="lazy">`:''}<div class="pub-actions"><a class="publication-button" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" aria-label="Publication website for ${esc(p.title)}">Publication website <span aria-hidden="true">↗</span></a>${p.pdf_url?`<a class="publication-button pdf-button" href="${esc(p.pdf_url)}" target="_blank" rel="noopener noreferrer" aria-label="PDF of ${esc(p.title)}">PDF <span aria-hidden="true">↗</span></a>`:''}</div></article>`;
  }
- const api={parseCSV,publications,images,escapeHTML,localImage,publicationHTML};
+ function homePublicationHTML(p){const esc=escapeHTML;return `<article class="home-publication"><div class="home-pub-year">${p.year}<span>${esc(p.type)}</span></div><div><h3><a href="publications.html#pub-${esc(p.id)}">${esc(p.title)}</a></h3><p>${esc(p.venue)}</p></div><a class="home-pub-link" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" aria-label="Publication website for ${esc(p.title)}">↗</a></article>`}
+ const api={parseCSV,publications,images,escapeHTML,localImage,publicationHTML,homePublicationHTML};
  if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.PortfolioData=api;
 })(globalThis);
 
@@ -189,5 +230,6 @@ const menu=document.querySelector('#menu'),nav=document.querySelector('#navigati
  function load(path,parse,apply){return fetch(path,{cache:'no-store'}).then(response=>{if(!response.ok)throw Error('HTTP '+response.status);return response.text()}).then(parse).then(apply).catch(error=>console.warn('Keeping embedded content for '+path+': '+error.message))}
  load('data/images.csv',PortfolioData.images,applyImages);
  if(document.querySelector('#publication-list'))load('data/publications.csv',PortfolioData.publications,renderRecords);
+ if(document.querySelector('#home-publications'))load('data/publications.csv',PortfolioData.publications,records=>{document.querySelector('#home-publications').innerHTML=records.slice(0,3).map(PortfolioData.homePublicationHTML).join('')});
 })();
 </script></body></html>

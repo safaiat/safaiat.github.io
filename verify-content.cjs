@@ -19,12 +19,15 @@ const toCSV=rows=>[keys,...rows.map(row=>keys.map(key=>row[key]||''))].map(row=>
 const newerCSV=toCSV([...headers,extra]);
 const html=fs.readFileSync('publications.html','utf8');
 const script=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].find(m=>!m[0].includes('application/ld+json'))[1];
-async function run(protocol,fail){
+const homeHTML=fs.readFileSync('index.html','utf8');
+const homeScript=[...homeHTML.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].find(m=>!m[0].includes('application/ld+json'))[1];
+async function run(protocol,fail,home=false){
  let articles=[],publicationHTML='',fetched=[];
  const dummy={hidden:false,src:'',alt:'',classList:{toggle(){},contains(){return false},remove(){}},setAttribute(){},addEventListener(){},focus(){}};
  const nodes={};
  for(const name of ['#menu','#navigation','.back-top','#year','#pub-count','#no-results','#pub-search'])nodes[name]={...dummy,value:''};
  nodes['#publication-list']={set innerHTML(value){publicationHTML=value;articles=[...value.matchAll(/id="pub-([^"]+)"/g)].map(m=>({hidden:false,id:m[1]}))}};
+ if(home){delete nodes['#publication-list'];nodes['#home-publications']={set innerHTML(value){publicationHTML=value}}}
  const filters=['all','conference','chapter','poster'].map(filter=>({...dummy,dataset:{filter}}));
  const profile={...dummy,tagName:'IMG'};
  let stageHTML='',captionHTML='';
@@ -32,8 +35,9 @@ async function run(protocol,fail){
  const figure={tagName:'FIGURE',querySelector(selector){return selector==='.research-image'?stage:{set innerHTML(value){captionHTML=value}}}};
  const document={querySelector:selector=>nodes[selector],querySelectorAll(selector){if(selector==='.filter')return filters;if(selector==='.publication')return articles;if(selector.includes('data-image-key="profile"'))return [profile];if(selector.includes('data-image-key="hpc"'))return [figure];return []},getElementById(){return null},addEventListener(){}};
  const context=vm.createContext({document,location:{protocol,hash:''},scrollY:0,addEventListener(){},requestAnimationFrame:fn=>fn(),console:{warn(){}},fetch:async(path,options)=>{fetched.push(path);assert.equal(options.cache,'no-store');if(fail)throw Error('Offline');return {ok:true,text:async()=>path.includes('publications')?newerCSV:imageCSV}}});
- vm.runInContext(script,context);
+ vm.runInContext(home?homeScript:script,context);
  await new Promise(resolve=>setImmediate(resolve));
+ if(home){assert.equal(fetched.length,2);assert.equal((publicationHTML.match(/class="home-publication"/g)||[]).length,3);assert(publicationHTML.includes('New &lt;img'));assert(publicationHTML.includes('publications.html#pub-new-paper'));return}
  if(protocol==='file:'){assert.equal(fetched.length,0);assert.equal(articles.length,9)}
  else if(fail){assert.equal(articles.length,9)}
  else{
@@ -45,4 +49,4 @@ async function run(protocol,fail){
   nodes['#pub-search'].value='New <img';vm.runInContext('filterPublications()',context);assert.equal(articles.filter(a=>!a.hidden).length,1);
  }
 }
-(async()=>{await run('file:',false);await run('https:',false);await run('https:',true);console.log('PASS: CSV quoting/BOM/multiline fields, validation, image paths, hosted automatic updates, new publication/image rendering, escaping, search after refresh, offline fallback, and failed-request fallback.');})().catch(error=>{console.error(error);process.exitCode=1});
+(async()=>{await run('file:',false);await run('https:',false);await run('https:',true);await run('https:',false,true);console.log('PASS: CSV parsing, validation, hosted publication/image updates, homepage highlights, escaping, search after refresh, and offline/error fallbacks.');})().catch(error=>{console.error(error);process.exitCode=1});
