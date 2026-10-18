@@ -4,7 +4,7 @@ Website visitors need only the generated PNGs, not Python.
 """
 from pathlib import Path
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 OUT = Path(__file__).parent / 'assets'
 OUT.mkdir(exist_ok=True)
@@ -59,8 +59,43 @@ draw=ImageDraw.Draw(im);draw.rectangle((187,183,383,379),outline='#788697',width
 draw.rectangle((257,408,397,548),outline='#788697',width=2)
 draw.line((384,183,720,183),fill='#495463',width=1);draw.line((398,480,720,480),fill='#495463',width=1)
 save(im,'research-phantom-multiscale.png')
+try:
+    font=ImageFont.truetype('C:/Windows/Fonts/segoeui.ttf',22)
+    small=ImageFont.truetype('C:/Windows/Fonts/segoeui.ttf',18)
+except OSError:
+    font=ImageFont.load_default();small=font
+# Distinct regions of the same image are connected to distinct GPU workers.
+im=canvas();paste(im,phantom,(60,100,480,480));draw=ImageDraw.Draw(im)
+colors=['#87b6ec','#8bd0c3','#d6b78b','#bbabdf']
+for i,color in enumerate(colors):
+    top=100+i*120
+    draw.rectangle((60,top,539,top+119),outline=color,width=3)
+    row_y=65+i*150
+    region=phantom[i*192:(i+1)*192,:]
+    paste(im,region,(775,row_y+32,360,90))
+    draw.rectangle((775,row_y+32,1134,row_y+121),outline=color,width=2)
+    draw.line((540,top+60,625,top+60,700,row_y+77,760,row_y+77),fill=color,width=2)
+    draw.polygon([(760,row_y+77),(750,row_y+71),(750,row_y+83)],fill=color)
+    draw.text((775,row_y),f'GPU {i}  /  REGION {i+1}',font=font,fill=color)
+draw.text((60,40),'IMAGE DOMAIN',font=font,fill='#c7ccd4')
+save(im,'research-gpu-regions.png')
+# An explicitly illustrative blurred/reference pair and a magnified region.
+im=canvas();blurred=gray(phantom).filter(ImageFilter.GaussianBlur(7))
+im.paste(blurred.resize((350,350),Image.Resampling.LANCZOS),(25,170))
+paste(im,phantom,(435,170,350,350));paste(im,phantom[190:460,200:470],(895,220,250,250))
+draw=ImageDraw.Draw(im)
+draw.text((25,115),'BLURRED ILLUSTRATION',font=font,fill='#bbc4ce')
+draw.text((435,115),'CLEAR REFERENCE',font=font,fill='#bbc4ce')
+draw.text((895,165),'ENLARGED DETAIL',font=small,fill='#bbc4ce')
+draw.line((390,345,420,345),fill='#a3b0c0',width=2)
+draw.polygon([(420,345),(410,338),(410,352)],fill='#a3b0c0')
+draw.rectangle((526,257,649,380),outline='#8da9ca',width=2)
+draw.line((650,258,870,258),fill='#8da9ca',width=1)
+draw.rectangle((895,220,1144,469),outline='#8da9ca',width=2)
+draw.text((435,575),'Concept only — no algorithm output or performance claim',font=small,fill='#87929f')
+save(im,'research-priors-detail.png')
 preview=Image.new('RGB',(1200,680),'white')
-for i,name in enumerate(['research-phantom-projection.png','research-phantom-priors.png','research-phantom-partitions.png','research-phantom-multiscale.png']):
+for i,name in enumerate(['pytomography-spect-example.png','research-phantom-projection.png','research-gpu-regions.png','research-priors-detail.png']):
     preview.paste(Image.open(OUT/name).resize((600,340)),((i%2)*600,(i//2)*340))
 preview.save(OUT/'research-preview.jpg',quality=90)
-print('Generated four 1200×680 phantom illustrations and a preview.')
+print('Generated scientific illustration assets and a four-card preview.')
