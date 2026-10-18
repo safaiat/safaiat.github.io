@@ -5,8 +5,13 @@ module.exports = function graphic(index) {
   ['research-gpu-regions.png','Different regions. Different GPUs.','A conceptual illustration of separate image regions assigned to individual GPUs.','A phantom divided into four horizontal image regions, each connected to a different GPU'],
   ['research-priors-detail.png','From image quality to fine detail','Blurred and reference phantom views, with an enlarged region to illustrate the role of image priors.','Illustrative blurred phantom, clear reference phantom, and enlarged internal structure; not a model result']
  ];
- const [file,title,caption,alt] = figures[index];
- const credit=index===0?'<small>Source: <a href="https://pytomography.readthedocs.io/en/latest/notebooks/t_dicomdata.html#reconstruct-the-object" target="_blank" rel="noopener noreferrer">PyTomography documentation ↗</a> · © Luke Polson · <a href="assets/PyTomography-LICENSE.txt">MIT license</a>. External example; not my research result.</small>':'<small>Conceptual illustration · not an experimental or learned-model result</small>';
- const image=`<img src="assets/${file}" width="${index===0?562:1200}" height="${index===0?251:680}" alt="${alt}" loading="lazy" decoding="async">`;
- return `<figure class="research-visual"><div class="research-image ${index===0?'spect-example':''}">${index===0?`<div class="spect-crop">${image}</div>`:image}</div><figcaption><strong>${title}</strong><span>${caption}</span>${credit}</figcaption></figure>`;
+ const fs=require('fs'),config=require('./website-data.js'),esc=config.escapeHTML;
+ const key=['spect','ct','hpc','priors'][index];
+ const row=config.images(fs.readFileSync('data/images.csv','utf8')).find(row=>row.key===key);
+ let [file,title,caption,alt] = figures[index];
+ if(row){file=row.src.slice(7);title=row.title;caption=row.caption;alt=row.alt}
+ const cropped=row?row.crop==='spect-panel':index===0;
+ const credit=row?(row.credit_text?`<small>${row.credit_url?`<a href="${esc(row.credit_url)}" target="_blank" rel="noopener noreferrer">${esc(row.credit_text)} ↗</a>`:esc(row.credit_text)}${row.license_url?` · <a href="${esc(row.license_url)}">License</a>`:''}</small>`:''):'<small>Conceptual illustration</small>';
+ const image=`<img src="assets/${esc(file)}" width="${cropped?562:1200}" height="${cropped?251:680}" alt="${esc(alt)}" loading="lazy" decoding="async">`;
+ return `<figure class="research-visual" data-image-key="${key}"><div class="research-image ${cropped?'spect-example':''}">${cropped?`<div class="spect-crop">${image}</div>`:image}</div><figcaption><strong>${esc(title)}</strong><span>${esc(caption)}</span>${credit}</figcaption></figure>`;
 };
