@@ -5,10 +5,7 @@
  const esc=PortfolioData.escapeHTML;
  function renderRecords(records){
   publications=records;
-  document.querySelector('#publication-list').innerHTML=records.map(p=>{
-   const image=p.image?`<img class="publication-image" src="${esc(p.image)}" alt="${esc(p.image_alt||p.title)}" loading="lazy">`:'';
-   return `<article class="publication" id="pub-${esc(p.id)}"><div class="pub-year">${p.year}</div><div><h3><a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">${esc(p.title)}</a></h3><p class="authors">${esc(p.authors).replace(/Md\.? Safaiat Hossain/g,'<strong>$&</strong>')}</p><p class="venue">${esc(p.venue)}</p><p class="pub-type">${esc(p.type)}</p>${p.description?`<p class="pub-description">${esc(p.description)}</p>`:''}${image}</div><a class="pub-link" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" aria-label="Read ${esc(p.title)}">Read ↗</a></article>`;
-  }).join('');
+  document.querySelector('#publication-list').innerHTML=records.map(PortfolioData.publicationHTML).join('');
   document.querySelectorAll('.publication-image').forEach(img=>img.addEventListener('error',()=>{img.hidden=true}));
   filterPublications();
   if(location.hash){const target=document.getElementById(location.hash.slice(1));if(target)requestAnimationFrame(()=>target.scrollIntoView())}

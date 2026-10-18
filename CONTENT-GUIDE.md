@@ -21,6 +21,7 @@ Columns:
 | type | Display label, such as `Conference paper`, `Preprint`, or `Published book chapter`. |
 | category | `conference`, `chapter` (book chapters and preprints), or `poster`. |
 | url | Full `https://` DOI, publisher, or preprint URL. |
+| pdf_url | Optional direct PDF URL or local PDF path such as `assets/paper.pdf`. Leave empty when no PDF is available; the PDF button stays hidden. |
 | description | Optional short description. |
 | image | Optional local image path, such as `assets/new-paper.png`. Leave empty for text-only entries. |
 | image_alt | A short description of the image. |
@@ -28,6 +29,8 @@ Columns:
 Upload each new image to `assets` in the repository. The CSV points to the image file; it does not contain or upload the image itself. File paths and capitalization must match exactly.
 
 The initial CSV contains your existing nine scholarly outputs, with no invented examples or publications.
+
+Each record appears as a card with a **Publication website** button. A separate **PDF** button appears only when `pdf_url` is populated. The medical imaging preprint includes its official arXiv PDF link; other records await verified full-text links or PDFs you upload.
 
 ## Change a photo or research figure
 
