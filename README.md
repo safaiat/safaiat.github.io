@@ -1,40 +1,30 @@
-# safaiat.github.io
+# Md Safaiat Hossain — academic website
 
-Minimal academic portfolio website for Md Safaiat Hossain.
+Open **index.html** directly in your browser. The site has six separate pages:
 
-## Pages
+- `index.html` — overview and professional portrait
+- `about.html` — biography and research interests
+- `research.html` — current research and earlier projects
+- `publications.html` — searchable scholarly records and category filters
+- `experience.html` — appointments, education, and technical focus
+- `contact.html` — professional contact destinations
 
-- Home
-- CV
-- Research
-- Publications
-- Contact
+All pages work through `file://`. No installation, build, development server, or internet connection is required for the website itself. External scholarly links require internet access. Every page embeds its own CSS and JavaScript, using system fonts and local imagery.
 
-## Before publishing
+## Design and photograph
 
-1. Email is set to `mhossa47@tenessee.edu`.
-2. Google Scholar link is already set.
-3. LinkedIn link is already set.
-4. Add your CV at `assets/Safaiat_Hossain_CV.pdf`.
-5. Optional: add `assets/profile.jpg` and replace the initials placeholder in `index.html`.
-6. Replace the publication placeholders in `publications.html`.
+The site uses white backgrounds, near-black typography, quiet gray secondary text, restrained blue links, and spacious layouts. Your supplied photograph is copied to `assets/profile.png` and appears on Home and About. Desktop and mobile crops use the original photo without editing its content. No dark mode is used in this white-focused design.
 
-## Publish with GitHub Pages
+## Content updates
 
-Create a GitHub repository named exactly:
+Edit the relevant HTML file directly. Publication data is embedded in `publications.html`; project data is embedded in `research.html`. Scientific graphics are original inline SVG schematics labeled illustrative, not experimental results.
 
-`YOUR-GITHUB-USERNAME.github.io`
+The contact page preserves the public academic email from the existing portfolio: mhossa47@tennessee.edu. A CV PDF has not been supplied, so no broken download is displayed; the legacy cv.html address leads to Experience and Education.
 
-If your GitHub username is `safaiat`, the repository should be:
+Biographical and publication metadata follow the supplied brief. The official UT profile and 2026 arXiv record were independently readable during initial construction. DOI and Scholar records were inaccessible through the browsing service; those supplied links still need independent external validation.
 
-`safaiat.github.io`
+## Verification
 
-Upload these files to the repository root, then enable GitHub Pages in:
+`verify.cjs` is an optional developer check, runnable with `node verify.cjs` when Node is already installed. It is not needed to open or use the website. It checks script execution using a minimal DOM harness, all internal links and resources, metadata, project/publication counts, and search/filter scenarios. It does not simulate browser layout. Automated visual verification at 375, 768, and 1440 pixels remains outstanding because the in-app browser blocks file URLs.
 
-Settings → Pages → Build and deployment → Deploy from a branch
-
-Choose the `main` branch and `/ (root)` folder.
-
-Your site will then be served at:
-
-`https://safaiat.github.io/`
+To publish later, upload the six HTML files and `assets` folder together to a static host. This source is prepared for the safaiat/safaiat.github.io GitHub Pages repository.
