@@ -160,6 +160,27 @@ nav.page-navigation{display:block;position:static;border:0;border-top:1px solid 
 .research-focus-panel .research-foot strong{font-size:10px;line-height:1.5;padding:0}
 .research-focus-panel .research-foot .tags{margin-top:10px;gap:6px}
 .research-focus-panel .research-foot .tag{font-size:10px;padding:4px 8px}
+.home-layout .link-row{gap:10px}
+.home-layout .link-row .text-link{border:1px solid var(--line);border-radius:5px;padding:10px 16px;font-size:12px;line-height:1.6;font-weight:500;justify-content:center}
+.home-layout .link-row .text-link:first-child{background:var(--ink);border-color:var(--ink);color:white}
+.home-layout .link-row .text-link:hover{border-color:var(--accent);text-decoration:none}
+.home-layout .link-row .text-link:first-child:hover{background:#333338;border-color:#333338}
+.home-layout .socials{gap:9px;margin-top:12px}
+.home-layout .socials a{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:5px;padding:7px 12px;font-size:11px;line-height:1.6;background:white;color:#515154}
+.home-layout .socials a:hover{border-color:var(--accent);color:var(--accent)}
+.home-layout .home-affiliations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;padding:21px 0;border-block:1px solid var(--line)}
+.home-affiliations>div{display:grid;gap:4px}
+.home-affiliations .affiliation-label{font-size:10px;color:var(--muted)}
+.home-affiliations a{font-size:14px;color:var(--ink);font-weight:500}
+.home-affiliations a:hover{color:var(--accent)}
+.home-affiliations small{font-size:11px;color:var(--muted)}
+.home-impact{padding:32px 0}
+.home-impact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.home-impact-grid article{border-left:2px solid var(--line);padding:0 0 0 18px}
+.home-impact-grid h3{font-size:18px;line-height:1.45;letter-spacing:-.25px}
+.home-impact-grid p{font-size:13px;line-height:1.85;color:var(--muted);margin-top:11px}
+.home-layout .intro strong,#about .prose strong{font-weight:600;color:var(--ink)}
+@media(max-width:650px){.home-layout .home-affiliations{grid-template-columns:minmax(0,1fr);gap:19px}.home-impact-grid{grid-template-columns:minmax(0,1fr);gap:24px}.home-impact{padding:28px 0}.home-impact-grid p{margin-top:7px}.home-layout .link-row .text-link{padding:10px 14px}}
 </style></head><body id="top"><a class="skip" href="#main">Skip to content</a><header><div class="wrap nav-row"><a class="brand" href="index.html">Md Safaiat Hossain</a><nav id="navigation" aria-label="Main navigation"><a href="index.html" >Home</a><a href="about.html" >About</a><a href="research.html" >Research</a><a href="publications.html" aria-current="page">Publications</a><a href="experience.html" >Experience</a><a href="contact.html" >Contact</a></nav><button class="menu-button" id="menu" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation">☰</button></div></header><main id="main"><div class="wrap page-intro"><h1>Publications</h1><p>A record of research in computational imaging, machine learning, and applied engineering.</p></div><section id="publications"><div class="wrap"><div class="publication-controls"><div class="filters" role="group" aria-label="Filter publications"><button class="filter" data-filter="all" aria-pressed="true">All Publications</button><button class="filter" data-filter="conference" aria-pressed="false">Conference Papers</button><button class="filter" data-filter="chapter" aria-pressed="false">Book Chapters & Preprints</button><button class="filter" data-filter="poster" aria-pressed="false">Posters & Other Outputs</button></div><label class="search"><span class="sr-only">Search publications by title, author, year, or topic</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="pub-search" type="search" placeholder="Search publications…" autocomplete="off"></label></div><div id="pub-count" class="publication-count" role="status" aria-live="polite"></div><div id="publication-list"></div><p id="no-results" class="no-results" hidden>No publications match your search. Try another title, author, year, or category.</p><noscript><a href="https://scholar.google.com/citations?user=3w4yffEAAAAJ&amp;hl=en">Read the full list on Google Scholar.</a></noscript><div class="pub-bottom"><a class="text-link" href="https://scholar.google.com/citations?user=3w4yffEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">View full publication list on Google Scholar ↗</a><small>Preprints and posters are labeled by publication status.</small></div></div></section></main><nav class="page-navigation" aria-label="Page navigation"><div class="wrap"><a class="page-previous" href="research.html" rel="prev"><span>Previous</span><strong>← Research</strong></a><a class="page-following" href="experience.html" rel="next"><span>Next</span><strong>Experience →</strong></a></div></nav><footer><div class="wrap footer-row"><span>© <span id="year">2026</span> Md Safaiat Hossain</span><span>Computational imaging · Inverse problems · Scalable AI</span><a href="contact.html">Knoxville, Tennessee</a></div></footer><a href="#top" class="back-top" aria-label="Back to top" hidden>↑</a><script>/* CSV content utilities shared by the build and the embedded browser code. */
 (function(root){
  'use strict';

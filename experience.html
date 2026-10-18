@@ -160,6 +160,27 @@ nav.page-navigation{display:block;position:static;border:0;border-top:1px solid 
 .research-focus-panel .research-foot strong{font-size:10px;line-height:1.5;padding:0}
 .research-focus-panel .research-foot .tags{margin-top:10px;gap:6px}
 .research-focus-panel .research-foot .tag{font-size:10px;padding:4px 8px}
+.home-layout .link-row{gap:10px}
+.home-layout .link-row .text-link{border:1px solid var(--line);border-radius:5px;padding:10px 16px;font-size:12px;line-height:1.6;font-weight:500;justify-content:center}
+.home-layout .link-row .text-link:first-child{background:var(--ink);border-color:var(--ink);color:white}
+.home-layout .link-row .text-link:hover{border-color:var(--accent);text-decoration:none}
+.home-layout .link-row .text-link:first-child:hover{background:#333338;border-color:#333338}
+.home-layout .socials{gap:9px;margin-top:12px}
+.home-layout .socials a{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:5px;padding:7px 12px;font-size:11px;line-height:1.6;background:white;color:#515154}
+.home-layout .socials a:hover{border-color:var(--accent);color:var(--accent)}
+.home-layout .home-affiliations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;padding:21px 0;border-block:1px solid var(--line)}
+.home-affiliations>div{display:grid;gap:4px}
+.home-affiliations .affiliation-label{font-size:10px;color:var(--muted)}
+.home-affiliations a{font-size:14px;color:var(--ink);font-weight:500}
+.home-affiliations a:hover{color:var(--accent)}
+.home-affiliations small{font-size:11px;color:var(--muted)}
+.home-impact{padding:32px 0}
+.home-impact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.home-impact-grid article{border-left:2px solid var(--line);padding:0 0 0 18px}
+.home-impact-grid h3{font-size:18px;line-height:1.45;letter-spacing:-.25px}
+.home-impact-grid p{font-size:13px;line-height:1.85;color:var(--muted);margin-top:11px}
+.home-layout .intro strong,#about .prose strong{font-weight:600;color:var(--ink)}
+@media(max-width:650px){.home-layout .home-affiliations{grid-template-columns:minmax(0,1fr);gap:19px}.home-impact-grid{grid-template-columns:minmax(0,1fr);gap:24px}.home-impact{padding:28px 0}.home-impact-grid p{margin-top:7px}.home-layout .link-row .text-link{padding:10px 14px}}
 </style></head><body id="top"><a class="skip" href="#main">Skip to content</a><header><div class="wrap nav-row"><a class="brand" href="index.html">Md Safaiat Hossain</a><nav id="navigation" aria-label="Main navigation"><a href="index.html" >Home</a><a href="about.html" >About</a><a href="research.html" >Research</a><a href="publications.html" >Publications</a><a href="experience.html" aria-current="page">Experience</a><a href="contact.html" >Contact</a></nav><button class="menu-button" id="menu" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation">☰</button></div></header><main id="main"><div class="wrap page-intro"><h1>Experience & education</h1><p>An academic path from electrical engineering to computational imaging.</p></div><section id="experience" class="wrap"><div class="experience-grid"><div><h2 class="column-title">RESEARCH & PROFESSIONAL EXPERIENCE</h2><div class="timeline"><article class="timeline-entry"><div class="date">AUG 2024 — PRESENT</div><h3>Graduate Research Assistant</h3><h4>University of Tennessee, Knoxville</h4><p>Tomographic reconstruction, optimization, AI, and GPU-accelerated scientific computing, in collaboration with researchers at Oak Ridge National Laboratory.</p></article></div></div><div><h2 class="column-title">EDUCATION</h2><div class="timeline"><article class="timeline-entry"><div class="date">2024 — PRESENT</div><h3>Ph.D. in Data Science and Engineering</h3><h4>University of Tennessee, Knoxville</h4><p>Bredesen Center for Interdisciplinary Research and Graduate Education. Computational imaging, AI-assisted reconstruction, and high-performance computing.<br>Advisor: Dr. Xiao Wang.</p></article><article class="timeline-entry"><div class="date">UNDERGRADUATE EDUCATION</div><h3>B.Sc. in Electrical and Electronic Engineering</h3><h4>Bangladesh Army University of Engineering and Technology</h4><p>Bangladesh.</p></article></div></div></div></section></main><nav class="page-navigation" aria-label="Page navigation"><div class="wrap"><a class="page-previous" href="publications.html" rel="prev"><span>Previous</span><strong>← Publications</strong></a><a class="page-following" href="contact.html" rel="next"><span>Next</span><strong>Contact →</strong></a></div></nav><footer><div class="wrap footer-row"><span>© <span id="year">2026</span> Md Safaiat Hossain</span><span>Computational imaging · Inverse problems · Scalable AI</span><a href="contact.html">Knoxville, Tennessee</a></div></footer><a href="#top" class="back-top" aria-label="Back to top" hidden>↑</a><script>/* CSV content utilities shared by the build and the embedded browser code. */
 (function(root){
  'use strict';

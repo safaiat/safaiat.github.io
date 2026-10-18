@@ -25,7 +25,7 @@ The SPECT card shows the Siemens vendor reconstruction panel of a Lu-177 NEMA ph
 
 Optional asset-generation source is in `generate-research-images.py` (NumPy and Pillow); these tools are not required to view the website. The phantom and parallel-beam projection presentation follows the standard concepts illustrated in the [scikit-image Radon transform example](https://scikit-image.org/docs/0.23.x/auto_examples/transform/plot_radon_transform.html). Images are calculated locally rather than copied from that documentation. `research-figures.cjs` supplies captions when rebuilding with `node redesign.cjs`.
 
-The contact page preserves the public academic email from the existing portfolio: mhossa47@tennessee.edu. A CV PDF has not been supplied, so no broken download is displayed; the legacy cv.html address leads to Experience and Education.
+The contact page includes the supplied ORNL email, hossainm2@ornl.gov, and the public university email from the existing portfolio, mhossa47@tennessee.edu. A CV PDF has not been supplied, so no broken download is displayed; the legacy cv.html address leads to Experience and Education.
 
 Biographical and publication metadata follow the supplied brief. The official UT profile and 2026 arXiv record were independently readable during initial construction. DOI and Scholar records were inaccessible through the browsing service; those supplied links still need independent external validation.
 
