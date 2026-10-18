@@ -16,8 +16,8 @@
    const stage=element.querySelector('.research-image');if(!stage)return;
    const previous=stage.innerHTML,wasCropped=stage.classList.contains('spect-example');
    const image=`<img src="${esc(r.src)}" width="1200" height="680" alt="${esc(r.alt)}" loading="lazy" decoding="async">`;
-   const cropped=r.crop==='spect-panel';stage.classList.toggle('spect-example',cropped);
-   stage.innerHTML=cropped?`<div class="spect-crop">${image}</div>`:image;
+   const cropped=['spect-panel','vendor-panel'].includes(r.crop);stage.classList.toggle('spect-example',cropped);
+   stage.innerHTML=cropped?`<div class="spect-crop ${r.crop==='vendor-panel'?'vendor-panel':''}">${image}</div>`:image;
    const oldCaption=element.querySelector('figcaption').innerHTML;
    const img=stage.querySelector('img');img.addEventListener('error',()=>{stage.innerHTML=previous;stage.classList.toggle('spect-example',wasCropped);element.querySelector('figcaption').innerHTML=oldCaption},{once:true});
    const credit=r.credit_text?`<small>${r.credit_url?`<a href="${esc(r.credit_url)}" target="_blank" rel="noopener noreferrer">${esc(r.credit_text)} ↗</a>`:esc(r.credit_text)}${r.license_url?` · <a href="${esc(r.license_url)}">License</a>`:''}</small>`:'';

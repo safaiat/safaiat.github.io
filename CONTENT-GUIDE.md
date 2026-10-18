@@ -46,7 +46,7 @@ Upload the image into `assets`, then update the matching row in `data/images.csv
 
 Edit `src` to the new relative path, such as `assets/my-spect.png`, and update `alt`. For research figures, edit `title` and `caption` as needed. Use `credit_text`, `credit_url`, and `license_url` to preserve attribution when required.
 
-**Important:** the current SPECT row uses `crop=spect-panel` to show only one panel of the original tutorial comparison. When replacing it with your own single image, change `crop` to `none`. All other figures use `none`.
+**Important:** the current SPECT row uses `crop=vendor-panel` to show only the Siemens panel of the original documentation comparison. `spect-panel` selects its PyTomography panel instead. When replacing it with your own single image, change `crop` to `none`. All other figures use `none`. Showing the Siemens example does not imply use of PyTomography in the researcher's work; the link credits the original image source.
 
 Leave a publication's optional image columns blank to hide its image. Keep the five image-setting rows; omit a row only if you want that location to retain its embedded fallback.
 

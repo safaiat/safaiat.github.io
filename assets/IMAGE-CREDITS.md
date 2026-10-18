@@ -2,12 +2,12 @@
 
 ## PyTomography SPECT example
 
-`pytomography-spect-example.png` is the original figure from the official PyTomography documentation. The website displays a CSS crop of its PyTomography panel, excluding the vendor panel, embedded heading, and white margins. The reconstructed image itself is not altered:
+`pytomography-spect-example.png` is the original figure from the official PyTomography documentation. The website displays a CSS crop of its **Siemens vendor reconstruction panel**, excluding the PyTomography panel, embedded heading, and white margins. The reconstructed image itself is not altered:
 
 - Tutorial: https://pytomography.readthedocs.io/en/latest/notebooks/t_dicomdata.html#reconstruct-the-object
 - Image: https://pytomography.readthedocs.io/en/latest/_images/notebooks_t_dicomdata_47_0.png
 - Copyright (c) 2023 Luke Polson, MIT license. Full license: `PyTomography-LICENSE.txt`.
-- The source is a Lu-177 NEMA phantom SPECT reconstruction example, comparing PyTomography with Siemens software. This is an external tutorial figure, not a result of Md Safaiat Hossain's research.
+- The source is a Lu-177 NEMA phantom SPECT reconstruction example, comparing PyTomography with Siemens software. Only the Siemens result is displayed. This is an external documentation example, not a result of Md Safaiat Hossain's research, and does not imply that he uses PyTomography.
 
 ## Original illustrative figures
 

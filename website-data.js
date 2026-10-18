@@ -32,7 +32,7 @@
  }
  function images(text){
   const rows=unique(parseCSV(text),'key');
-  rows.forEach(r=>{if(!localImage(r.src)||!r.alt)throw Error('Image requires local assets/ path and alt text');if(r.credit_url&&!webURL(r.credit_url))throw Error('Invalid credit URL');if(r.license_url&&!webURL(r.license_url)&&!localImage(r.license_url))throw Error('Invalid license URL');if(r.crop&&!['spect-panel','none'].includes(r.crop))throw Error('Invalid crop')});return rows;
+  rows.forEach(r=>{if(!localImage(r.src)||!r.alt)throw Error('Image requires local assets/ path and alt text');if(r.credit_url&&!webURL(r.credit_url))throw Error('Invalid credit URL');if(r.license_url&&!webURL(r.license_url)&&!localImage(r.license_url))throw Error('Invalid license URL');if(r.crop&&!['spect-panel','vendor-panel','none'].includes(r.crop))throw Error('Invalid crop')});return rows;
  }
  function escapeHTML(value){return String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
  function publicationHTML(p){
