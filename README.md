@@ -41,3 +41,5 @@ Biographical and publication metadata follow the supplied brief. The official UT
 To publish later, upload the six HTML files and `assets` folder together to a static host. This source is prepared for the safaiat/safaiat.github.io GitHub Pages repository.
 
 The CV page uses locally bundled PDF.js (Apache-2.0; license in `assets/pdfjs/LICENSE`) to render the current PDF on the hosted site without browser viewer chrome. Bundled page images support direct-file viewing.
+
+About and Contact restore the layouts and copy from Git commit 2483811 (four commits before a5e6b51). Their main content is in page-templates/about.html and page-templates/contact.html, with historical styles in page-templates/restored.css. The builder retains the current shared navigation, including CV. Edit these templates for those two pages.
