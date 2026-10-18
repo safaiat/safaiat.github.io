@@ -1,0 +1,44 @@
+[
+  {
+    "ref": "pothole",
+    "title": "AI-Based Road Pothole Detection",
+    "text": "Computer vision for detecting potholes in real-world road imagery from Bangladesh, with analysis of repair-cost estimation.",
+    "methods": "YOLOv4-tiny · Video evaluation · AI vs. human assessment"
+  },
+  {
+    "ref": "buildings",
+    "title": "Visual Structural Health Monitoring",
+    "text": "Detecting cracks and dampness in building images to support visual infrastructure assessment.",
+    "methods": "Image processing · Object detection · Deep neural networks"
+  },
+  {
+    "ref": "stylegan",
+    "title": "Generative Texture Synthesis",
+    "text": "Texture generation with StyleGAN2 and transfer learning on the BWW-Texture dataset.",
+    "methods": "StyleGAN2 · Transfer learning · Image synthesis"
+  },
+  {
+    "ref": "eeg",
+    "title": "EEG-Based Character Recognition",
+    "text": "Machine-learning analysis of EEG responses to visual stimuli for English-character recognition.",
+    "methods": "EEG analysis · Feature extraction · Supervised classification"
+  },
+  {
+    "ref": "bhsgr",
+    "title": "Bengali Hand Sign Recognition",
+    "text": "A lightweight CNN architecture for accessible and efficient Bengali hand-gesture recognition.",
+    "methods": "Computer vision · Lightweight CNNs · Gesture classification"
+  },
+  {
+    "ref": "forward",
+    "title": "Biologically Inspired Learning",
+    "text": "Exploring neural-network design involving forward-pass-only training methods.",
+    "methods": "Neural architectures · Alternative learning · Biologically inspired AI"
+  },
+  {
+    "ref": "waste",
+    "title": "Waste-to-Energy Assessment",
+    "text": "Applied engineering research on converting municipal solid waste into electrical energy in Bangladesh.",
+    "methods": "Renewable energy · Municipal solid waste · Engineering assessment"
+  }
+]

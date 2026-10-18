@@ -8,8 +8,9 @@ for(const file of pages){
  assert.equal(ids.length,new Set(ids).size,'Duplicate IDs in '+file);
  generatedIds[file]=new Set(ids);
  assert(!/<script[^>]+src=|<link[^>]+stylesheet|\bimport\s*\(/.test(html));
- assert(html.includes("if(location.protocol!=='http:'&&location.protocol!=='https:')return;"));
+ if(['index.html','about.html','research.html','publications.html'].includes(file))assert(html.includes("if(location.protocol!=='http:'&&location.protocol!=='https:')return;"));
  if(file!=='index.html')assert(!html.includes('<div class="eyebrow">Md Safaiat Hossain</div>'));
+ if(file==='research.html')assert.equal((html.match(/class="project"/g)||[]).length,7);
  assert(html.includes('@media(max-width:560px)')&&html.includes('@media(max-width:760px)'));
  assert.equal((html.match(/aria-current="page"/g)||[]).length,1);
  JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);

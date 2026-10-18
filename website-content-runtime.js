@@ -20,7 +20,7 @@
    stage.innerHTML=cropped?`<div class="spect-crop ${r.crop==='vendor-panel'?'vendor-panel':''}">${image}</div>`:image;
    const oldCaption=element.querySelector('figcaption').innerHTML;
    const img=stage.querySelector('img');img.addEventListener('error',()=>{stage.innerHTML=previous;stage.classList.toggle('spect-example',wasCropped);element.querySelector('figcaption').innerHTML=oldCaption},{once:true});
-   const credit=r.credit_text?`<small>${r.credit_url?`<a href="${esc(r.credit_url)}" target="_blank" rel="noopener noreferrer">${esc(r.credit_text)} ↗</a>`:esc(r.credit_text)}${r.license_url?` · <a href="${esc(r.license_url)}">License</a>`:''}</small>`:'';
+   const credit=r.credit_text?`<small>${r.credit_url?`<a href="${esc(r.credit_url)}" target="_blank" rel="noopener noreferrer">${esc(r.credit_text)}</a>`:esc(r.credit_text)}${r.license_url?` · <a href="${esc(r.license_url)}">License</a>`:''}</small>`:'';
    element.querySelector('figcaption').innerHTML=`<strong>${esc(r.title)}</strong><span>${esc(r.caption)}</span>${credit}`;
   }));
  }

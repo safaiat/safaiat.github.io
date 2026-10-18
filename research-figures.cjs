@@ -11,7 +11,7 @@ module.exports = function graphic(index) {
  let [file,title,caption,alt] = figures[index];
  if(row){file=row.src.slice(7);title=row.title;caption=row.caption;alt=row.alt}
  const cropped=row?['spect-panel','vendor-panel'].includes(row.crop):index===0;
- const credit=row?(row.credit_text?`<small>${row.credit_url?`<a href="${esc(row.credit_url)}" target="_blank" rel="noopener noreferrer">${esc(row.credit_text)} ↗</a>`:esc(row.credit_text)}${row.license_url?` · <a href="${esc(row.license_url)}">License</a>`:''}</small>`:''):'<small>Conceptual illustration</small>';
+ const credit=row?(row.credit_text?`<small>${row.credit_url?`<a href="${esc(row.credit_url)}" target="_blank" rel="noopener noreferrer">${esc(row.credit_text)}</a>`:esc(row.credit_text)}${row.license_url?` · <a href="${esc(row.license_url)}">License</a>`:''}</small>`:''):'<small>Conceptual illustration</small>';
  const image=`<img src="assets/${esc(file)}" width="${cropped?562:1200}" height="${cropped?251:680}" alt="${esc(alt)}" loading="lazy" decoding="async">`;
  return `<figure class="research-visual" data-image-key="${key}"><div class="research-image ${cropped?'spect-example':''}">${cropped?`<div class="spect-crop ${row?.crop==='vendor-panel'?'vendor-panel':''}">${image}</div>`:image}</div><figcaption><strong>${esc(title)}</strong><span>${esc(caption)}</span>${credit}</figcaption></figure>`;
 };
