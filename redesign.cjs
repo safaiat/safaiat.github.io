@@ -16,8 +16,9 @@ const css=`
 .research-visual{margin:0;background:#fff}
 .research-image{background:#101113;overflow:hidden}
 .research-image img{display:block;width:100%;height:auto;aspect-ratio:1200/680;object-fit:contain}
-.research-image.spect-example{background:white;padding:18px 12px}
-.research-image.spect-example img{aspect-ratio:1200/680}
+.research-image.spect-example{background:#101113;padding:0;aspect-ratio:1200/680;display:grid;place-items:center}
+.spect-crop{position:relative;width:52%;aspect-ratio:271/201;overflow:hidden;background:#000}
+.research-image.spect-example .spect-crop img{position:absolute;max-width:none;width:207.3801%;height:auto;aspect-ratio:auto;left:-3.6901%;top:-19.9005%}
 .research-visual figcaption a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .research-visual figcaption{padding:20px 28px 22px;border-bottom:1px solid var(--line)}
 .research-visual figcaption strong{display:block;font-size:13px;font-weight:600;line-height:1.5;letter-spacing:normal}

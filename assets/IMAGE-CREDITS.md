@@ -2,7 +2,7 @@
 
 ## PyTomography SPECT example
 
-`pytomography-spect-example.png` is reproduced unchanged from the official PyTomography documentation:
+`pytomography-spect-example.png` is the original figure from the official PyTomography documentation. The website displays a CSS crop of its PyTomography panel, excluding the vendor panel, embedded heading, and white margins. The reconstructed image itself is not altered:
 
 - Tutorial: https://pytomography.readthedocs.io/en/latest/notebooks/t_dicomdata.html#reconstruct-the-object
 - Image: https://pytomography.readthedocs.io/en/latest/_images/notebooks_t_dicomdata_47_0.png
