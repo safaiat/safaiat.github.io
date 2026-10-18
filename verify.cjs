@@ -1,5 +1,5 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
-const pages=['index.html','about.html','research.html','publications.html','experience.html','contact.html'];
+const pages=['index.html','about.html','research.html','publications.html','experience.html','cv.html','contact.html'];
 const sources=Object.fromEntries(pages.map(p=>[p,fs.readFileSync(p,'utf8')]));
 const generatedIds={};
 for(const file of pages){
@@ -7,7 +7,8 @@ for(const file of pages){
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
  assert.equal(ids.length,new Set(ids).size,'Duplicate IDs in '+file);
  generatedIds[file]=new Set(ids);
- assert(!/<script[^>]+src=|<link[^>]+stylesheet|\bimport\s*\(/.test(html));
+ assert(!/<link[^>]+stylesheet|\bimport\s*\(/.test(html));
+ if(file!=='cv.html')assert(!/<script[^>]+src=/.test(html));
  if(['index.html','about.html','research.html','publications.html'].includes(file))assert(html.includes("if(location.protocol!=='http:'&&location.protocol!=='https:')return;"));
  if(file!=='index.html')assert(!html.includes('<div class="eyebrow">Md Safaiat Hossain</div>'));
  if(file==='research.html')assert.equal((html.match(/class="project"/g)||[]).length,7);

@@ -1,5 +1,11 @@
 # Update publications and images
 
+## Replace your CV
+
+The CV page always reads **`assets/Safaiat_cv.pdf`** directly. On GitHub, open the `assets` folder, choose **Add file → Upload files**, and upload your new PDF named exactly **`Safaiat_cv.pdf`**, replacing the existing file. Commit to `main`. After GitHub Pages publishes, both the seamless page preview and **Download CV** button use the replacement. No HTML edits or build are required. Refresh the page if your browser still shows a cached copy.
+
+The hosted page uses a locally bundled PDF.js renderer, with no browser PDF toolbar, borders, or nested scrolling. The **Download CV** button remains available on all screen sizes. Direct-file offline viewing uses bundled page images; these snapshots can be refreshed with `pdftoppm -r 150 -png assets/Safaiat_cv.pdf assets/cv-page` when rebuilding locally. GitHub updates read the PDF directly and do not require updating snapshots. Upload a public-facing CV: all pages of the uploaded PDF are publicly accessible.
+
 You can update the hosted website without editing HTML, JavaScript, or running a build.
 
 ## Add or edit a publication

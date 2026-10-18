@@ -1,12 +1,13 @@
 # Md Safaiat Hossain — academic website
 
-Open **index.html** directly in your browser. The site has six separate pages:
+Open **index.html** directly in your browser. The site has seven separate pages:
 
 - `index.html` — overview and professional portrait
 - `about.html` — biography and research interests
 - `research.html` — current research and earlier projects
 - `publications.html` — searchable scholarly records and category filters
 - `experience.html` — appointments, education, and technical focus
+- `cv.html` — borderless CV preview with a download control; replace `assets/Safaiat_cv.pdf` to update
 - `contact.html` — professional contact destinations
 
 All pages work through `file://` using an embedded content snapshot. No installation, build, development server, or internet connection is required for that offline view. When hosted on GitHub Pages, the site automatically reads `data/publications.csv` and `data/images.csv`, so you can update records and image paths without editing HTML or running a build. External scholarly links require internet access. Every page embeds its own CSS and JavaScript, using system fonts and local imagery.
@@ -38,3 +39,5 @@ Biographical and publication metadata follow the supplied brief. The official UT
 `verify.cjs` and `verify-content.cjs` are optional developer checks, runnable with Node when already installed. They are not needed to open or update the hosted website. They check script execution using a minimal DOM harness, internal links and resources, metadata, search/filter behavior, CSV parsing and validation, hosted content updates, and offline/error fallbacks. They do not simulate browser layout. Automated visual verification at 375, 768, and 1440 pixels remains outstanding because the in-app browser blocks file URLs.
 
 To publish later, upload the six HTML files and `assets` folder together to a static host. This source is prepared for the safaiat/safaiat.github.io GitHub Pages repository.
+
+The CV page uses locally bundled PDF.js (Apache-2.0; license in `assets/pdfjs/LICENSE`) to render the current PDF on the hosted site without browser viewer chrome. Bundled page images support direct-file viewing.
