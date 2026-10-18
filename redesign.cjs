@@ -52,18 +52,50 @@ const css=`
 #experience .expertise p{font-size:14px;line-height:1.85;letter-spacing:normal;max-width:48ch}
 @media(max-width:900px){#experience .experience-grid{grid-template-columns:minmax(0,1fr);gap:52px}#experience .timeline p{max-width:65ch}}
 @media(max-width:560px){#experience .timeline h3{font-size:23px}#experience .column-title{font-size:11px;letter-spacing:.8px}#experience .expertise-grid{grid-template-columns:minmax(0,1fr);gap:28px}#experience .expertise{margin-top:48px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}@media print{header,.publication-controls,.back-top,.page-next{display:none}body{color:black}.wrap{width:100%}.publication[hidden]{display:grid!important}section{padding:25px 0}.research-card{break-inside:avoid}}
+/* Compact editorial page openings: content begins beside the title. */
+.compact-page-title{font-size:54px;line-height:1.12;letter-spacing:-2.3px;font-weight:600}
+#about{padding-top:48px;padding-bottom:64px}
+#about .about-grid{grid-template-columns:minmax(0,1.65fr) minmax(0,.8fr);gap:72px;align-items:start}
+#about .compact-page-title{margin-bottom:25px}
+#about .prose .lead{font-size:23px;line-height:1.55}
+#about .interest-panel{padding:0;border:0}
+.about-portrait{display:block;width:100%;max-width:250px;aspect-ratio:1;object-fit:cover;object-position:center 35%;border-radius:7px;margin-bottom:30px}
+.research-header{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:72px;align-items:start;padding-top:48px;padding-bottom:40px}
+.research-title p{font-size:18px;line-height:1.6;color:var(--muted);max-width:330px;margin-top:19px}
+.research-header .expertise{border:0;padding:0;margin:0}
+.research-header .expertise>.eyebrow{font-size:11px;line-height:1.5;letter-spacing:.7px;font-weight:600}
+.research-header .expertise-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px;margin-top:18px}
+.research-header .expertise h3{font-size:13px;line-height:1.5;letter-spacing:normal;margin-bottom:7px}
+.research-header .expertise p{font-size:12px;line-height:1.7;letter-spacing:normal}
+#research{padding-top:0}
+nav.page-navigation{display:block;position:static;border:0;border-top:1px solid var(--line);background:var(--wash);padding:26px 0;box-shadow:none}
+.page-navigation .wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.page-navigation a{display:flex;flex-direction:column;gap:4px;padding:0;color:var(--ink)}
+.page-navigation a:hover{color:var(--accent)}
+.page-navigation span{font-size:10px;color:var(--muted);line-height:1.5}
+.page-navigation strong{font-size:14px;font-weight:500;line-height:1.6}
+.page-previous{grid-column:1;justify-self:start;align-items:flex-start}
+.page-following{grid-column:2;justify-self:end;align-items:flex-end;text-align:right}
+@media(max-width:900px){#about .about-grid{gap:38px}.research-header{gap:35px;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}.compact-page-title{font-size:48px}.research-header .expertise-grid{gap:20px}}
+@media(max-width:650px){#about{padding-top:32px}#about .about-grid{grid-template-columns:minmax(0,1fr);gap:32px}#about .prose .lead{font-size:21px}#about .interest-panel{border-top:1px solid var(--line);padding-top:25px}.about-portrait{max-width:145px;margin-bottom:24px}.compact-page-title{font-size:42px;letter-spacing:-1.8px}.research-header{grid-template-columns:minmax(0,1fr);gap:26px;padding-top:32px;padding-bottom:30px}.research-title p{font-size:16px;max-width:100%;margin-top:14px}.research-header .expertise{padding-top:22px;border-top:1px solid var(--line)}.research-header .expertise-grid{gap:18px 22px}.page-navigation .wrap{align-items:start;gap:16px}.page-navigation strong{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}@media print{header,.publication-controls,.back-top,.page-next,.page-navigation{display:none}body{color:black}.wrap{width:100%}.publication[hidden]{display:grid!important}section{padding:25px 0}.research-card{break-inside:avoid}}
 `;
 const navLinks=[['index.html','Home'],['about.html','About'],['research.html','Research'],['publications.html','Publications'],['experience.html','Experience'],['contact.html','Contact']];
 function nav(file){return `<a class="skip" href="#main">Skip to content</a><header><div class="wrap nav-row"><a class="brand" href="index.html">Md Safaiat Hossain</a><nav id="navigation" aria-label="Main navigation">${navLinks.map(([href,label])=>`<a href="${href}" ${href===file?'aria-current="page"':''}>${label}</a>`).join('')}</nav><button class="menu-button" id="menu" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation">☰</button></div></header>`}
 const scholar='https://scholar.google.com/citations?user=3w4yffEAAAAJ&amp;hl=en';
 const home=`<div class="wrap"><section class="home-hero"><div><div class="eyebrow">Ph.D. Researcher · University of Tennessee, Knoxville</div><h1>Md Safaiat<span>Hossain.</span></h1><h2 class="headline">Advancing scientific imaging.<br>Through physics, AI, and<br>high-performance computing.</h2><p class="intro">I develop physics-based reconstruction methods for CT and SPECT imaging, bringing together statistical inverse problems, machine learning, and scalable scientific computing.</p><div class="link-row"><a class="text-link" href="research.html">Explore my research <span aria-hidden="true">↗</span></a><a class="text-link" href="publications.html">View publications <span aria-hidden="true">↗</span></a></div><div class="socials"><a href="${scholar}" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a><a href="https://www.linkedin.com/in/safaiat-hossain" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.researchgate.net/profile/Md-Safaiat-Hossain" target="_blank" rel="noopener noreferrer">ResearchGate ↗</a></div></div><figure class="home-photo"><img src="assets/profile.png" width="1024" height="768" alt="Md Safaiat Hossain wearing a blue suit and glasses" fetchpriority="high"><figcaption><span>Data Science and Engineering</span><span>Knoxville, Tennessee</span></figcaption></figure></section><div class="home-affiliations"><span><strong>University of Tennessee, Knoxville</strong></span><span>Bredesen Center</span><span>Research collaboration with <strong>Oak Ridge National Laboratory</strong></span></div><section class="home-overview"><div class="section-heading"><div><div class="eyebrow">Research focus</div><h2>From measurements<br>to meaningful images.</h2></div><p>My work connects imaging physics with intelligent algorithms to address challenging reconstruction problems.</p></div><div class="overview-grid"><a class="overview-card" href="research.html#research"><span class="index">01 / Computational imaging</span><h3>Physics-based reconstruction.</h3><p>Statistical model-based methods for quantitative CT and SPECT imaging.</p><span class="text-link">Explore imaging research ↗</span></a><a class="overview-card" href="research.html#learned-priors"><span class="index">02 / Machine learning</span><h3>Learning better image priors.</h3><p>Image priors and Plug-and-Play methods for inverse problems.</p><span class="text-link">Explore learned priors ↗</span></a><a class="overview-card" href="research.html#hpc"><span class="index">03 / Scientific computing</span><h3>Reconstruction at scale.</h3><p>GPU-accelerated imaging operators and distributed optimization.</p><span class="text-link">Explore scalable computing ↗</span></a></div></section><section class="home-feature"><div><div class="eyebrow">Recent scholarly work · 2026</div><h2>A computational view<br>of medical imaging.</h2></div><div><h3>Efficient Computing for Medical Image Acquisition and Reconstruction</h3><p>A chapter manuscript exploring acquisition, numerical reconstruction, and efficient computing across CT, MRI, PET, and SPECT.</p><a class="text-link" href="publications.html#pub-imaging">Read about the arXiv preprint ↗</a></div></section></div>`;
-let about=section('about').replace('<div class="about-grid">','<img class="about-photo" src="assets/profile.png" alt="Md Safaiat Hossain at the University of Tennessee" width="1024" height="768"><div class="about-grid">');
+const removeSectionHeading=html=>html.replace(/<div class="section-heading">[\s\S]*?<\/div><\/div>/,'');
+let about=removeSectionHeading(section('about'))
+ .replace('<div class="prose">','<div class="prose"><h1 class="compact-page-title">About me</h1>')
+ .replace('<aside class="interest-panel">','<aside class="interest-panel"><img class="about-portrait" src="assets/profile.png" alt="Md Safaiat Hossain" width="1024" height="768">');
 let research=section('research').replace(/<article class="research-card reveal">/g,((i)=>()=>`<article class="research-card reveal" id="${['spect','ct','hpc','learned-priors'][i++]}">`)(0));
 research=research.replaceAll('href="#pub-imaging"','href="publications.html#pub-imaging"');
+research=removeSectionHeading(research);
 const projects=section('projects');
 const pubs=section('publications');
-const experience=section('experience');
+const experienceSource=section('experience');
+const technicalFocus=experienceSource.match(/<div class="expertise">[\s\S]*?(?=<\/section>)/)[0];
+const experience=experienceSource.replace(technicalFocus,'');
 const contact=section('contact');
 const pages=[
 ['index.html','Computational Imaging & AI','','',home,'Research','research.html'],
@@ -78,11 +110,15 @@ const filtering=`let category='all';function filterPublications(){const query=do
 const jsonld=old.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/)[0];
 for(const [file,title,heading,desc,content,next,nextHref] of pages){
 let mainContent=file==='index.html'?home:`<div class="wrap page-intro"><h1>${heading}</h1><p>${desc}</p></div>`+content;
+if(file==='about.html')mainContent=about;
+if(file==='research.html')mainContent=`<div class="wrap research-header"><div class="research-title"><h1 class="compact-page-title">Research</h1><p>${desc}</p></div>${technicalFocus}</div>`+content;
 const profile=imageRows.find(row=>row.key==='profile');
 if(profile)mainContent=mainContent.replace(/<img([^>]*?)src="assets\/profile\.png"([^>]*?)>/g,(_,before,after)=>'<img'+before+'data-image-key="profile" src="'+csvContent.escapeHTML(profile.src)+'"'+after.replace(/\s*alt="[^"]*"/,'')+' alt="'+csvContent.escapeHTML(profile.alt)+'">');
 let scripts=common;if(file==='research.html')scripts+=renderData+projectRender;if(file==='publications.html')scripts+=renderData+pubRender+filtering;
 scripts+='\n'+fs.readFileSync('website-data.js','utf8')+'\n'+fs.readFileSync('website-content-runtime.js','utf8');
-const html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} — Md Safaiat Hossain</title><meta name="description" content="${file==='index.html'?'Md Safaiat Hossain, Ph.D. researcher at the University of Tennessee, Knoxville. Computational imaging, inverse problems, and scalable AI.':desc}"><meta name="color-scheme" content="light"><meta property="og:title" content="${title} — Md Safaiat Hossain"><meta property="og:type" content="website">${jsonld}<style>${css}</style></head><body id="top">${nav(file)}<main id="main">${mainContent}</main><aside class="page-next"><div class="wrap"><p>${file==='contact.html'?'Explore the work behind the conversation.':'Continue exploring.'}</p><a class="text-link" href="${nextHref}">${next} <span aria-hidden="true">→</span></a></div></aside><footer><div class="wrap footer-row"><span>© <span id="year">2026</span> Md Safaiat Hossain</span><span>Computational imaging · Inverse problems · Scalable AI</span><a href="contact.html">Knoxville, Tennessee</a></div></footer><a href="#top" class="back-top" aria-label="Back to top" hidden>↑</a><script>${scripts}</script></body></html>`;
+const pageIndex=navLinks.findIndex(([href])=>href===file),previous=navLinks[pageIndex-1],following=navLinks[pageIndex+1];
+const pageNavigation=`<nav class="page-navigation" aria-label="Page navigation"><div class="wrap">${previous?`<a class="page-previous" href="${previous[0]}" rel="prev"><span>Previous</span><strong>← ${previous[1]}</strong></a>`:''}${following?`<a class="page-following" href="${following[0]}" rel="next"><span>Next</span><strong>${following[1]} →</strong></a>`:''}</div></nav>`;
+const html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} — Md Safaiat Hossain</title><meta name="description" content="${file==='index.html'?'Md Safaiat Hossain, Ph.D. researcher at the University of Tennessee, Knoxville. Computational imaging, inverse problems, and scalable AI.':desc}"><meta name="color-scheme" content="light"><meta property="og:title" content="${title} — Md Safaiat Hossain"><meta property="og:type" content="website">${jsonld}<style>${css}</style></head><body id="top">${nav(file)}<main id="main">${mainContent}</main>${pageNavigation}<footer><div class="wrap footer-row"><span>© <span id="year">2026</span> Md Safaiat Hossain</span><span>Computational imaging · Inverse problems · Scalable AI</span><a href="contact.html">Knoxville, Tennessee</a></div></footer><a href="#top" class="back-top" aria-label="Back to top" hidden>↑</a><script>${scripts}</script></body></html>`;
 fs.writeFileSync(file,html);
 }
 console.log('Created six standalone HTML pages with embedded CSS and JavaScript.');
