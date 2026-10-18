@@ -17,7 +17,9 @@ The site uses white backgrounds, near-black typography, quiet gray secondary tex
 
 ## Content updates
 
-Edit the relevant HTML file directly. Publication data is embedded in `publications.html`; project data is embedded in `research.html`. Scientific graphics are original inline SVG schematics labeled illustrative, not experimental results.
+Edit the relevant HTML file directly. Publication data is embedded in `publications.html`; project data is embedded in `research.html`. Research figures are original, locally generated modified Shepp–Logan phantom images. Captions identify the analytic sinogram, synthetic noise, conceptual spatial partitions, and multiscale crops. No experimental results or learned-model outputs are represented.
+
+Optional asset-generation source is in `generate-research-images.py` (NumPy and Pillow); these tools are not required to view the website. The phantom and parallel-beam projection presentation follows the standard concepts illustrated in the [scikit-image Radon transform example](https://scikit-image.org/docs/0.23.x/auto_examples/transform/plot_radon_transform.html). Images are calculated locally rather than copied from that documentation. `research-figures.cjs` supplies captions when rebuilding with `node redesign.cjs`.
 
 The contact page preserves the public academic email from the existing portfolio: mhossa47@tennessee.edu. A CV PDF has not been supplied, so no broken download is displayed; the legacy cv.html address leads to Experience and Education.
 
